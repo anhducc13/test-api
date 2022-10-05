@@ -1,7 +1,7 @@
 var express = require("express");
 var apiMocker = require("connect-api-mocker");
 var cors = require("cors");
-const port = 8081;
+const port = 3000;
 var app = express();
 var fs = require("fs");
 
@@ -29,7 +29,7 @@ const requestTime = function (request, res, next) {
 const corsOpts = {
   origin: "*",
 
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST", "PUT", "PATCH", "OPTIONS", "DELETE"],
 
   allowedHeaders: ["Content-Type"],
 };
