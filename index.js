@@ -17,10 +17,7 @@ const requestTime = function (request, res, next) {
   if (request.url.startsWith("/v1/test/list-result")) {
     return next();
   }
-  const rawdata = fs.readFileSync("data.json");
-  const list = JSON.parse(rawdata);
-  list.push(data);
-  fs.writeFile("data.json", JSON.stringify(list, null, 2), (err) => {
+  fs.writeFile("data.json", JSON.stringify(data, null, 2), (err) => {
     if (err) throw err;
     next();
   });
